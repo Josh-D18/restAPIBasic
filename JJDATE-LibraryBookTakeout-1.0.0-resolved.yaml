@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: Library API
+  description: API for managing book borrowing and returning functionality.
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/JJDATE/LibraryBookTakeout/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /borrow:
+    post:
+      summary: Borrow a Book
+      description: Allows a user to borrow a book if they don't already have one.
+      requestBody:
+        description: Information needed to borrow a book.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/borrow_body'
+        required: true
+      responses:
+        "200":
+          description: Successfully borrowed a book.
+          content:
+            application/json:
+              schema:
+                type: string
+        "400":
+          description: User already has a book borrowed.
+          content:
+            application/json:
+              schema:
+                type: string
+  /return:
+    post:
+      summary: Return a Book
+      description: Allows a user to return a book if they have borrowed one.
+      requestBody:
+        description: Information needed to return a book.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/return_body'
+        required: true
+      responses:
+        "200":
+          description: Successfully returned a book.
+          content:
+            application/json:
+              schema:
+                type: string
+        "400":
+          description: User does not have a book borrowed.
+          content:
+            application/json:
+              schema:
+                type: string
+  /overdueItems:
+    get:
+      summary: Get Overdue Items
+      description: Retrieves a list of users with overdue books.
+      responses:
+        "200":
+          description: Successfully retrieved the list of users with overdue books.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: No users with overdue books found.
+          content:
+            application/json:
+              schema:
+                type: string
+components:
+  schemas:
+    UserRecord:
+      type: object
+      properties:
+        userId:
+          type: string
+        username:
+          type: string
+        borrowedAnything:
+          type: boolean
+    borrow_body:
+      required:
+      - userId
+      type: object
+      properties:
+        userId:
+          type: string
+          description: The ID of the user borrowing the book.
+    return_body:
+      required:
+      - userId
+      type: object
+      properties:
+        userId:
+          type: string
+          description: The ID of the user returning the book.
+    inline_response_200:
+      type: object
+      properties:
+        UsersWithOverdueBooks:
+          type: array
+          items:
+            $ref: '#/components/schemas/inline_response_200_UsersWithOverdueBooks'
+    inline_response_200_UsersWithOverdueBooks:
+      type: object
+      properties:
+        userId:
+          type: string
+        username:
+          type: string
+        borrowedAnything:
+          type: boolean

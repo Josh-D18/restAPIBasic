@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1723723332038" clover="3.2.0">
+  <project timestamp="1723723332038" name="All files">
+    <metrics statements="29" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="3" elements="39" coveredelements="26" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
+    <file name="utlis.ts" path="/Users/gig/Desktop/NodejsRestAPIMemory/src/utlis/utlis.ts">
+      <metrics statements="29" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="3"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="25" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="33" count="2" type="stmt"/>
+      <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="47" count="2" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="52" count="0" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="58" count="0" type="stmt"/>
+      <line num="60" count="0" type="stmt"/>
+      <line num="63" count="0" type="stmt"/>
+      <line num="66" count="0" type="stmt"/>
+      <line num="70" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>
